@@ -1180,6 +1180,479 @@ document.addEventListener('click', function(e) {
   }
 });
 
+// ===== GAMES MODULE =====
+
+const GAME_WORDS = [
+  { ru: 'мама', fr: 'maman', theme: 'Famille' },
+  { ru: 'папа', fr: 'papa', theme: 'Famille' },
+  { ru: 'брат', fr: 'frère', theme: 'Famille' },
+  { ru: 'сестра', fr: 'sœur', theme: 'Famille' },
+  { ru: 'дом', fr: 'maison', theme: 'Maison' },
+  { ru: 'книга', fr: 'livre', theme: 'Maison' },
+  { ru: 'вода', fr: 'eau', theme: 'Nourriture' },
+  { ru: 'хлеб', fr: 'pain', theme: 'Nourriture' },
+  { ru: 'молоко', fr: 'lait', theme: 'Nourriture' },
+  { ru: 'кот', fr: 'chat', theme: 'Animaux' },
+  { ru: 'собака', fr: 'chien', theme: 'Animaux' },
+  { ru: 'рыба', fr: 'poisson', theme: 'Animaux' },
+  { ru: 'красный', fr: 'rouge', theme: 'Couleurs' },
+  { ru: 'синий', fr: 'bleu', theme: 'Couleurs' },
+  { ru: 'зелёный', fr: 'vert', theme: 'Couleurs' },
+  { ru: 'белый', fr: 'blanc', theme: 'Couleurs' },
+  { ru: 'чёрный', fr: 'noir', theme: 'Couleurs' },
+  { ru: 'два', fr: 'deux', theme: 'Nombres' },
+  { ru: 'три', fr: 'trois', theme: 'Nombres' },
+  { ru: 'пять', fr: 'cinq', theme: 'Nombres' },
+  { ru: 'солнце', fr: 'soleil', theme: 'Nature' },
+  { ru: 'луна', fr: 'lune', theme: 'Nature' },
+  { ru: 'звезда', fr: 'étoile', theme: 'Nature' },
+  { ru: 'любовь', fr: 'amour', theme: 'Émotions' },
+  { ru: 'друг', fr: 'ami', theme: 'Personnes' },
+  { ru: 'семья', fr: 'famille', theme: 'Personnes' },
+  { ru: 'школа', fr: 'école', theme: 'Lieux' },
+  { ru: 'город', fr: 'ville', theme: 'Lieux' },
+  { ru: 'страна', fr: 'pays', theme: 'Lieux' },
+  { ru: 'музыка', fr: 'musique', theme: 'Culture' }
+];
+
+// ===== GAME 1: MEMORY MATCH =====
+let memoryState = {
+  cards: [],
+  flipped: [],
+  matched: [],
+  locked: false,
+  attempts: 0,
+  timer: 0,
+  timerInterval: null,
+  startTime: null
+};
+
+function startMemoryGame() {
+  const shuffled = [...GAME_WORDS].sort(() => Math.random() - 0.5).slice(0, 6);
+  memoryState = {
+    cards: [],
+    flipped: [],
+    matched: [],
+    locked: false,
+    attempts: 0,
+    timer: 0,
+    startTime: Date.now()
+  };
+
+  shuffled.forEach((word, i) => {
+    memoryState.cards.push({ id: `ru${i}`, text: word.ru, type: 'ru', pairId: i, word: word });
+    memoryState.cards.push({ id: `fr${i}`, text: word.fr, type: 'fr', pairId: i, word: word });
+  });
+
+  memoryState.cards.sort(() => Math.random() - 0.5);
+
+  renderMemoryGame();
+  startMemoryTimer();
+}
+
+function startMemoryTimer() {
+  if (memoryState.timerInterval) clearInterval(memoryState.timerInterval);
+  memoryState.timerInterval = setInterval(() => {
+    if (memoryState.matched.length < memoryState.cards.length) {
+      memoryState.timer = Math.floor((Date.now() - memoryState.startTime) / 1000);
+      const timerEl = document.getElementById('memory-timer');
+      if (timerEl) timerEl.textContent = formatTime(memoryState.timer);
+    }
+  }, 1000);
+}
+
+function formatTime(seconds) {
+  const m = Math.floor(seconds / 60);
+  const s = seconds % 60;
+  return `${m}:${s.toString().padStart(2, '0')}`;
+}
+
+function renderMemoryGame() {
+  const cardsHtml = memoryState.cards.map((card, index) => {
+    const isFlipped = memoryState.flipped.includes(index) || memoryState.matched.includes(card.pairId);
+    const isMatched = memoryState.matched.includes(card.pairId);
+    return `
+      <div class="mem-card ${isFlipped ? 'flipped' : ''} ${isMatched ? 'matched' : ''}" 
+           onclick="flipCard(${index})" data-index="${index}">
+        <div class="mem-card-inner">
+          <div class="mem-card-front">
+            <span class="mem-card-question">?</span>
+          </div>
+          <div class="mem-card-back ${card.type}">
+            <span class="mem-card-text">${card.text}</span>
+            <span class="mem-card-label">${card.type === 'ru' ? 'RUSSE' : 'FRANÇAIS'}</span>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  const matchedPairs = memoryState.matched.length;
+  const totalPairs = memoryState.cards.length / 2;
+
+  showModal(`
+    <h2>🧠 Jeu de Memory</h2>
+    <p style="text-align:center;margin-bottom:1rem;font-size:0.85rem;color:var(--text-muted)">
+      Associez chaque mot russe à sa traduction française
+    </p>
+    <div style="display:flex;justify-content:space-between;margin-bottom:1rem;font-size:0.85rem;color:var(--text-secondary)">
+      <span>🕐 <span id="memory-timer">0:00</span></span>
+      <span>🎯 Tentatives : <span id="memory-attempts">${memoryState.attempts}</span></span>
+      <span>✅ <span id="memory-matched">${matchedPairs}</span>/${totalPairs}</span>
+    </div>
+    <div class="memory-grid">
+      ${cardsHtml}
+    </div>
+    ${matchedPairs === totalPairs ? `
+      <div style="text-align:center;margin-top:1.5rem">
+        <p style="color:var(--gold);font-size:1.1rem;margin-bottom:0.5rem">🎉 Félicitations !</p>
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem">
+          Terminé en ${formatTime(memoryState.timer)} — ${memoryState.attempts} tentatives
+        </p>
+        <button class="btn" onclick="startMemoryGame()" style="margin-right:0.5rem">Rejouer</button>
+        <button class="btn" onclick="closeModal();showGamesMenu()" style="background:transparent;border-color:var(--border-subtle)">Autres jeux</button>
+      </div>
+    ` : ''}
+    <button class="restart-quiz" onclick="closeModal()" style="margin-top:1rem;width:100%">Fermer</button>
+  `);
+
+  if (memoryState.timerInterval) {
+    clearInterval(memoryState.timerInterval);
+    startMemoryTimer();
+  }
+}
+
+function flipCard(index) {
+  if (memoryState.locked) return;
+  if (memoryState.flipped.includes(index)) return;
+  if (memoryState.matched.includes(memoryState.cards[index].pairId)) return;
+  if (memoryState.flipped.length >= 2) return;
+
+  memoryState.flipped.push(index);
+  renderMemoryGame();
+
+  if (memoryState.flipped.length === 2) {
+    memoryState.locked = true;
+    memoryState.attempts++;
+    
+    const [i1, i2] = memoryState.flipped;
+    const card1 = memoryState.cards[i1];
+    const card2 = memoryState.cards[i2];
+
+    if (card1.pairId === card2.pairId && card1.type !== card2.type) {
+      memoryState.matched.push(card1.pairId);
+      memoryState.flipped = [];
+      memoryState.locked = false;
+      setTimeout(() => renderMemoryGame(), 300);
+    } else {
+      setTimeout(() => {
+        memoryState.flipped = [];
+        memoryState.locked = false;
+        renderMemoryGame();
+      }, 1000);
+    }
+    document.getElementById('memory-attempts').textContent = memoryState.attempts;
+  }
+}
+
+// ===== GAME 2: WORD SCRAMBLE =====
+let scrambleState = {
+  word: null,
+  scrambled: '',
+  guessed: '',
+  score: 0,
+  total: 0,
+  hint: ''
+};
+
+function startScrambleGame() {
+  scrambleState = { word: null, scrambled: '', guessed: '', score: 0, total: 0, hint: '' };
+  nextScramble();
+}
+
+function nextScramble() {
+  const word = GAME_WORDS[Math.floor(Math.random() * GAME_WORDS.length)];
+  scrambleState.word = word;
+  
+  let scrambled = word.ru.split('');
+  for (let i = scrambled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [scrambled[i], scrambled[j]] = [scrambled[j], scrambled[i]];
+  }
+  if (scrambled.join('') === word.ru && word.ru.length > 1) {
+    [scrambled[0], scrambled[1]] = [scrambled[1], scrambled[0]];
+  }
+  scrambleState.scrambled = scrambled.join('');
+  scrambleState.guessed = '';
+  scrambleState.total++;
+  
+  renderScramble();
+}
+
+function renderScramble() {
+  const progress = scrambleState.total > 0 ? Math.round((scrambleState.score / scrambleState.total) * 100) : 0;
+
+  showModal(`
+    <h2>🔤 Puzzle de mots</h2>
+    <p style="text-align:center;margin-bottom:0.5rem;font-size:0.85rem;color:var(--text-muted)">
+      Reconstituez le mot russe à partir des lettres mélangées
+    </p>
+    <div style="display:flex;justify-content:space-between;margin-bottom:1rem;font-size:0.85rem;color:var(--text-secondary)">
+      <span>🎯 Score : ${scrambleState.score}/${scrambleState.total}</span>
+      <span>Thème : ${scrambleState.word ? scrambleState.word.theme : '-'}</span>
+    </div>
+    <div style="text-align:center;margin:2rem 0">
+      <div style="font-size:2.5rem;letter-spacing:8px;color:var(--gold);font-family:'Cormorant Garamond',serif;margin-bottom:1.5rem">
+        ${scrambleState.scrambled.split('').map(l => `<span style="display:inline-block;background:rgba(201,169,110,0.1);padding:0.3rem 0.5rem;border-radius:8px;margin:0 2px;border:1px solid rgba(201,169,110,0.2)">${l}</span>`).join('')}
+      </div>
+      <input type="text" id="scramble-input" placeholder="Tapez le mot ici..." 
+        style="width:80%;padding:0.8rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(201,169,110,0.2);border-radius:12px;color:var(--cream);font-size:1.1rem;text-align:center;font-family:'Cormorant Garamond',serif;outline:none"
+        onkeypress="if(event.key==='Enter') checkScramble()">
+    </div>
+    <div style="display:flex;gap:0.5rem;justify-content:center">
+      <button class="btn" onclick="checkScramble()" style="flex:1">Vérifier ✓</button>
+      <button class="btn" onclick="showScrambleHint()" style="background:transparent;border-color:var(--border-subtle);flex:0.5">💡</button>
+    </div>
+    <div id="scramble-feedback" style="text-align:center;margin-top:1rem;font-size:0.9rem"></div>
+    <button class="restart-quiz" onclick="closeModal()" style="margin-top:1rem;width:100%">Fermer</button>
+  `);
+
+  document.getElementById('scramble-input').focus();
+}
+
+function checkScramble() {
+  const input = document.getElementById('scramble-input');
+  const feedback = document.getElementById('scramble-feedback');
+  if (!input || !feedback) return;
+  
+  const guess = input.value.trim().toLowerCase();
+  if (!guess) return;
+
+  if (guess === scrambleState.word.ru) {
+    scrambleState.score++;
+    feedback.innerHTML = `<span style="color:var(--gold)">✅ Parfait ! « ${scrambleState.word.ru} » = ${scrambleState.word.fr}</span>`;
+    setTimeout(() => nextScramble(), 1500);
+  } else {
+    feedback.innerHTML = `<span style="color:#E8B4B8">❌ Non, essaie encore ! Indice : ${scrambleState.word.fr}</span>`;
+    input.value = '';
+    input.focus();
+  }
+}
+
+function showScrambleHint() {
+  const hint = scrambleState.word.fr;
+  const feedback = document.getElementById('scramble-feedback');
+  if (feedback) {
+    feedback.innerHTML = `<span style="color:var(--text-muted)">💡 Traduction : ${hint}</span>`;
+  }
+}
+
+// ===== GAME 3: SPEED QUIZ =====
+let speedQuizState = {
+  questions: [],
+  current: 0,
+  score: 0,
+  total: 0,
+  timeLeft: 15,
+  timer: null
+};
+
+function startSpeedQuiz() {
+  const qs = [];
+  const shuffled = [...GAME_WORDS].sort(() => Math.random() - 0.5);
+  
+  for (let i = 0; i < 8; i++) {
+    const word = shuffled[i % shuffled.length];
+    const isRuToFr = Math.random() > 0.5;
+    
+    let options = [isRuToFr ? word.fr : word.ru];
+    const others = GAME_WORDS.filter(w => w.ru !== word.ru).sort(() => Math.random() - 0.5);
+    for (let j = 0; j < 3; j++) {
+      if (others[j]) options.push(isRuToFr ? others[j].fr : others[j].ru);
+    }
+    options = options.sort(() => Math.random() - 0.5);
+    
+    qs.push({
+      question: isRuToFr ? `Que signifie « ${word.ru} » ?` : `Comment dit-on « ${word.fr} » en russe ?`,
+      correct: isRuToFr ? word.fr : word.ru,
+      options: options,
+      answer: isRuToFr ? word.fr : word.ru,
+      theme: word.theme
+    });
+  }
+
+  speedQuizState = {
+    questions: qs,
+    current: 0,
+    score: 0,
+    total: qs.length,
+    timeLeft: 15,
+    timer: null
+  };
+
+  renderSpeedQuestion();
+}
+
+function renderSpeedQuestion() {
+  if (speedQuizState.current >= speedQuizState.total) {
+    endSpeedQuiz();
+    return;
+  }
+
+  const q = speedQuizState.questions[speedQuizState.current];
+  speedQuizState.timeLeft = 15;
+
+  const optionsHtml = q.options.map((opt, i) => `
+    <button class="speed-option" onclick="answerSpeedQuiz(${i}, '${opt.replace(/'/g, "\\'")}')" id="speed-opt-${i}">
+      ${opt}
+    </button>
+  `).join('');
+
+  showModal(`
+    <h2>⚡ Quiz Éclair</h2>
+    <div style="display:flex;justify-content:space-between;margin-bottom:0.5rem;font-size:0.85rem;color:var(--text-secondary)">
+      <span>Question ${speedQuizState.current + 1}/${speedQuizState.total}</span>
+      <span>🎯 ${speedQuizState.score} bonnes</span>
+    </div>
+    <div style="margin-bottom:1rem">
+      <div style="display:flex;justify-content:space-between;font-size:0.8rem;color:var(--text-muted);margin-bottom:0.2rem">
+        <span>⏱ <span id="speed-timer">${speedQuizState.timeLeft}</span>s</span>
+        <span>Thème : ${q.theme}</span>
+      </div>
+      <div class="progress-bar" style="height:4px">
+        <div class="progress-fill" id="speed-timer-bar" style="width:100%;background:linear-gradient(90deg,var(--gold),var(--rose-gold))"></div>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:1.2rem;color:var(--cream);margin:1.5rem 0;font-family:'Cormorant Garamond',serif">
+      ${q.question}
+    </p>
+    <div class="speed-options" style="display:flex;flex-direction:column;gap:0.5rem">
+      ${optionsHtml}
+    </div>
+    <div id="speed-feedback" style="text-align:center;margin-top:1rem;font-size:0.9rem"></div>
+  `);
+
+  if (speedQuizState.timer) clearInterval(speedQuizState.timer);
+  speedQuizState.timer = setInterval(() => {
+    speedQuizState.timeLeft--;
+    const timerEl = document.getElementById('speed-timer');
+    const barEl = document.getElementById('speed-timer-bar');
+    if (timerEl) timerEl.textContent = speedQuizState.timeLeft;
+    if (barEl) barEl.style.width = `${(speedQuizState.timeLeft / 15) * 100}%`;
+    
+    if (speedQuizState.timeLeft <= 0) {
+      clearInterval(speedQuizState.timer);
+      const feedback = document.getElementById('speed-feedback');
+      if (feedback) {
+        feedback.innerHTML = `<span style="color:#E8B4B8">⏰ Temps écoulé ! La réponse était : ${q.correct}</span>`;
+      }
+      disableSpeedOptions();
+      setTimeout(() => {
+        speedQuizState.current++;
+        renderSpeedQuestion();
+      }, 1500);
+    }
+  }, 1000);
+}
+
+function answerSpeedQuiz(index, answer) {
+  if (speedQuizState.timer) clearInterval(speedQuizState.timer);
+  
+  const q = speedQuizState.questions[speedQuizState.current];
+  const isCorrect = answer === q.correct;
+  if (isCorrect) speedQuizState.score++;
+
+  const feedback = document.getElementById('speed-feedback');
+  if (feedback) {
+    feedback.innerHTML = isCorrect 
+      ? `<span style="color:var(--gold)">✅ Correct ! ${q.correct}</span>`
+      : `<span style="color:#E8B4B8">❌ La réponse était : ${q.correct}</span>`;
+  }
+
+  q.options.forEach((opt, i) => {
+    const el = document.getElementById(`speed-opt-${i}`);
+    if (el) {
+      if (opt === q.correct) el.style.borderColor = 'var(--gold)';
+      else if (opt === answer && !isCorrect) el.style.borderColor = '#E8B4B8';
+      el.style.opacity = '0.6';
+    }
+  });
+
+  setTimeout(() => {
+    speedQuizState.current++;
+    renderSpeedQuestion();
+  }, 1500);
+}
+
+function disableSpeedOptions() {
+  document.querySelectorAll('.speed-option').forEach(el => {
+    el.disabled = true;
+    el.style.opacity = '0.5';
+  });
+}
+
+function endSpeedQuiz() {
+  const pct = Math.round((speedQuizState.score / speedQuizState.total) * 100);
+  const emoji = pct >= 80 ? '🌟' : pct >= 50 ? '👍' : '💪';
+  const msg = pct >= 80 ? 'Excellent niveau !' : pct >= 50 ? 'Bien ! Continue comme ça.' : 'Entraîne-toi encore un peu !';
+
+  showModal(`
+    <h2>⚡ Quiz Éclair — Terminé !</h2>
+    <div style="text-align:center;margin:2rem 0">
+      <div style="font-size:4rem;margin-bottom:1rem">${emoji}</div>
+      <div style="font-size:2.5rem;color:var(--gold);font-family:'Cormorant Garamond',serif">${speedQuizState.score}/${speedQuizState.total}</div>
+      <div style="font-size:0.9rem;color:var(--text-muted);margin:0.5rem 0">${pct}% de bonnes réponses</div>
+      <p style="color:var(--text-secondary);margin-top:0.5rem">${msg}</p>
+      <div class="progress-bar-container" style="margin-top:1.5rem">
+        <div class="progress-bar-label"><span>Score</span><span>${pct}%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+      </div>
+    </div>
+    <button class="btn" onclick="startSpeedQuiz()" style="width:100%;margin-bottom:0.5rem">Rejouer</button>
+    <button class="restart-quiz" onclick="closeModal();showGamesMenu()" style="width:100%">Autres jeux</button>
+  `);
+}
+
+// ===== GAMES MENU =====
+function showGamesMenu() {
+  showModal(`
+    <h2>🎮 Jeux interactifs</h2>
+    <p style="text-align:center;margin-bottom:1.5rem;font-size:0.85rem;color:var(--text-muted)">
+      Apprenez le russe en vous amusant ! Choisissez un jeu.
+    </p>
+    <div style="display:flex;flex-direction:column;gap:1rem">
+      <button class="game-menu-btn" onclick="closeModal();setTimeout(startMemoryGame,300)" style="background:linear-gradient(135deg,rgba(201,169,110,0.1),rgba(232,180,184,0.05));border:1px solid rgba(201,169,110,0.2);border-radius:16px;padding:1.2rem;text-align:left;cursor:pointer;transition:all 0.3s">
+        <div style="display:flex;align-items:center;gap:1rem">
+          <span style="font-size:2.5rem">🧠</span>
+          <div>
+            <div style="color:var(--cream);font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-bottom:0.2rem">Jeu de Memory</div>
+            <div style="font-size:0.8rem;color:var(--text-muted)">Associez les mots russes à leur traduction française. 6 paires à trouver !</div>
+          </div>
+        </div>
+      </button>
+      <button class="game-menu-btn" onclick="closeModal();setTimeout(startScrambleGame,300)" style="background:linear-gradient(135deg,rgba(201,169,110,0.1),rgba(232,180,184,0.05));border:1px solid rgba(201,169,110,0.2);border-radius:16px;padding:1.2rem;text-align:left;cursor:pointer;transition:all 0.3s">
+        <div style="display:flex;align-items:center;gap:1rem">
+          <span style="font-size:2.5rem">🔤</span>
+          <div>
+            <div style="color:var(--cream);font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-bottom:0.2rem">Puzzle de mots</div>
+            <div style="font-size:0.8rem;color:var(--text-muted)">Reconstituez le mot russe à partir des lettres mélangées. Avec indices !</div>
+          </div>
+        </div>
+      </button>
+      <button class="game-menu-btn" onclick="closeModal();setTimeout(startSpeedQuiz,300)" style="background:linear-gradient(135deg,rgba(201,169,110,0.1),rgba(232,180,184,0.05));border:1px solid rgba(201,169,110,0.2);border-radius:16px;padding:1.2rem;text-align:left;cursor:pointer;transition:all 0.3s">
+        <div style="display:flex;align-items:center;gap:1rem">
+          <span style="font-size:2.5rem">⚡</span>
+          <div>
+            <div style="color:var(--cream);font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-bottom:0.2rem">Quiz Éclair</div>
+            <div style="font-size:0.8rem;color:var(--text-muted)">8 questions chronométrées pour tester vos réflexes linguistiques !</div>
+          </div>
+        </div>
+      </button>
+    </div>
+    <button class="restart-quiz" onclick="closeModal()" style="margin-top:1.5rem;width:100%">Fermer</button>
+  `);
+}
+
 // Splash screen handling
 document.addEventListener('DOMContentLoaded', function() {
   const splash = document.getElementById('splash');
