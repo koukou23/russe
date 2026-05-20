@@ -406,6 +406,89 @@
       <button class="btn" onclick="showGamesMenu()">Jouer maintenant</button>
     </div>
   </section>
+
+  <!-- 7. Assistant IA -->
+  <section class="card" id="assistant-ia">
+    <div class="card-svg">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="aiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#C9A96E"/>
+            <stop offset="100%" stop-color="#E8B4B8"/>
+          </linearGradient>
+          <linearGradient id="aiNode" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#4A0E2E"/>
+            <stop offset="100%" stop-color="#8B0000"/>
+          </linearGradient>
+        </defs>
+        <circle cx="100" cy="30" r="8" fill="url(#aiNode)" stroke="url(#aiGrad)" stroke-width="1.5"/>
+        <circle cx="60" cy="80" r="8" fill="url(#aiNode)" stroke="url(#aiGrad)" stroke-width="1.5"/>
+        <circle cx="140" cy="80" r="8" fill="url(#aiNode)" stroke="url(#aiGrad)" stroke-width="1.5"/>
+        <circle cx="35" cy="140" r="8" fill="url(#aiNode)" stroke="url(#aiGrad)" stroke-width="1.5"/>
+        <circle cx="100" cy="140" r="8" fill="url(#aiNode)" stroke="url(#aiGrad)" stroke-width="1.5"/>
+        <circle cx="165" cy="140" r="8" fill="url(#aiNode)" stroke="url(#aiGrad)" stroke-width="1.5"/>
+        <circle cx="100" cy="175" r="8" fill="url(#aiNode)" stroke="url(#aiGrad)" stroke-width="1.5"/>
+        <line x1="100" y1="38" x2="60" y2="72" stroke="url(#aiGrad)" stroke-width="0.8" opacity="0.4"/>
+        <line x1="100" y1="38" x2="140" y2="72" stroke="url(#aiGrad)" stroke-width="0.8" opacity="0.4"/>
+        <line x1="60" y1="88" x2="35" y2="132" stroke="url(#aiGrad)" stroke-width="0.8" opacity="0.4"/>
+        <line x1="60" y1="88" x2="100" y2="132" stroke="url(#aiGrad)" stroke-width="0.8" opacity="0.4"/>
+        <line x1="140" y1="88" x2="100" y2="132" stroke="url(#aiGrad)" stroke-width="0.8" opacity="0.4"/>
+        <line x1="140" y1="88" x2="165" y2="132" stroke="url(#aiGrad)" stroke-width="0.8" opacity="0.4"/>
+        <line x1="35" y1="148" x2="100" y2="167" stroke="url(#aiGrad)" stroke-width="0.8" opacity="0.4"/>
+        <line x1="165" y1="148" x2="100" y2="167" stroke="url(#aiGrad)" stroke-width="0.8" opacity="0.4"/>
+        <line x1="100" y1="148" x2="100" y2="167" stroke="url(#aiGrad)" stroke-width="0.8" opacity="0.4"/>
+        <circle cx="100" cy="100" r="50" fill="url(#aiGrad)" opacity="0.05"/>
+        <circle cx="100" cy="100" r="30" fill="url(#aiGrad)" opacity="0.08"/>
+        <text x="20" y="25" font-size="8" fill="#C9A96E" opacity="0.4">✦</text>
+        <text x="175" y="30" font-size="6" fill="#E8B4B8" opacity="0.3">✦</text>
+        <text x="180" y="180" font-size="7" fill="#C9A96E" opacity="0.3">✦</text>
+      </svg>
+    </div>
+    <div class="card-content">
+      <h2>Assistant IA</h2>
+      <p>Conjugueur, prononciation, analyse d'erreurs, prédiction de progression et révisions intelligentes.</p>
+      <button class="btn" onclick="showAIAssistant()">Ouvrir l'assistant</button>
+    </div>
+  </section>
+
+  <!-- 8. Pratique Orale -->
+  <section class="card" id="pratique-orale">
+    <div class="card-svg">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="micGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#C9A96E"/>
+            <stop offset="100%" stop-color="#E8B4B8"/>
+          </linearGradient>
+          <radialGradient id="micGlow" cx="50%" cy="45%" r="50%">
+            <stop offset="0%" stop-color="#C9A96E" stop-opacity="0.12"/>
+            <stop offset="100%" stop-color="#C9A96E" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="micBody" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#E8B4B8"/>
+            <stop offset="100%" stop-color="#D4A0A0"/>
+          </linearGradient>
+        </defs>
+        <circle cx="100" cy="90" r="70" fill="url(#micGlow)"/>
+        <rect x="85" y="40" width="30" height="55" rx="15" fill="url(#micBody)" stroke="url(#micGrad)" stroke-width="1.2"/>
+        <rect x="90" y="95" width="20" height="8" rx="4" fill="url(#micGrad)" opacity="0.6"/>
+        <path d="M95 103 L95 120 Q100 128 105 120 L105 103" fill="url(#micBody)" stroke="url(#micGrad)" stroke-width="1"/>
+        <circle cx="100" cy="62" r="10" fill="#FFF5F0" opacity="0.15"/>
+        <path d="M60 80 Q55 90 60 100" fill="none" stroke="url(#micGrad)" stroke-width="1.2" opacity="0.4" stroke-linecap="round"/>
+        <path d="M50 72 Q42 90 50 108" fill="none" stroke="url(#micGrad)" stroke-width="1" opacity="0.3" stroke-linecap="round"/>
+        <path d="M140 80 Q145 90 140 100" fill="none" stroke="url(#micGrad)" stroke-width="1.2" opacity="0.4" stroke-linecap="round"/>
+        <path d="M150 72 Q158 90 150 108" fill="none" stroke="url(#micGrad)" stroke-width="1" opacity="0.3" stroke-linecap="round"/>
+        <circle cx="100" cy="60" r="3" fill="#C9A96E" opacity="0.2"/>
+        <circle cx="100" cy="105" r="2" fill="#C9A96E" opacity="0.15"/>
+        <text x="100" y="198" text-anchor="middle" fill="#C9A96E" font-size="6" font-family="'Cormorant Garamond', serif" opacity="0.5" letter-spacing="3">PRATIQUE ORALE</text>
+      </svg>
+    </div>
+    <div class="card-content">
+      <h2>Pratique Orale</h2>
+      <p>Entraînez-vous à parler russe avec des dialogues, des exercices de prononciation et la reconnaissance vocale.</p>
+      <button class="btn" onclick="showOralPractice()">Commencer à parler</button>
+    </div>
+  </section>
 </main>
 
 <footer>
