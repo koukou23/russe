@@ -1179,3 +1179,40 @@ document.addEventListener('click', function(e) {
     closeModal();
   }
 });
+
+// Splash screen handling
+document.addEventListener('DOMContentLoaded', function() {
+  const splash = document.getElementById('splash');
+  const splashBtn = document.getElementById('splash-btn');
+  const mainContent = document.querySelector('main');
+  const header = document.querySelector('header');
+  const footer = document.querySelector('footer');
+  
+  // Ensure main content is hidden initially
+  if (mainContent) mainContent.style.opacity = '0';
+  if (header) header.style.opacity = '0';
+  if (footer) footer.style.opacity = '0';
+  
+  splashBtn.addEventListener('click', function() {
+    splash.classList.add('hidden');
+    // Fade in the main content
+    if (mainContent) {
+      setTimeout(() => {
+        mainContent.style.transition = 'opacity 1s ease';
+        mainContent.style.opacity = '1';
+      }, 200);
+    }
+    if (header) {
+      setTimeout(() => {
+        header.style.transition = 'opacity 1s ease';
+        header.style.opacity = '1';
+      }, 400);
+    }
+    if (footer) {
+      setTimeout(() => {
+        footer.style.transition = 'opacity 1s ease';
+        footer.style.opacity = '1';
+      }, 600);
+    }
+  });
+});

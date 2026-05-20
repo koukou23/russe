@@ -3,13 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lamia — Apprendre le Russe</title>
+  <title>Russian with Lamia — Apprendre le Russe</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<div id="splash">
+  <div class="splash-content">
+    <div class="splash-rose">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="roseCenter" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#8B0000"/>
+            <stop offset="60%" stop-color="#CC0000"/>
+            <stop offset="100%" stop-color="#FF1A1A"/>
+          </radialGradient>
+          <radialGradient id="roseOuter" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#CC0000"/>
+            <stop offset="70%" stop-color="#8B0000"/>
+            <stop offset="100%" stop-color="#4A0E2E"/>
+          </radialGradient>
+          <linearGradient id="stemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#2D5A27"/>
+            <stop offset="100%" stop-color="#1A3A15"/>
+          </linearGradient>
+        </defs>
+        <path d="M100 130 Q95 150 100 185" fill="none" stroke="url(#stemGrad)" stroke-width="4" stroke-linecap="round"/>
+        <path d="M98 155 L88 148 L97 152" fill="#2D5A27" stroke="#1A3A15" stroke-width="0.5"/>
+        <path d="M100 165 Q120 155 125 170 Q115 175 100 165Z" fill="#3A7A33" stroke="#2D5A27" stroke-width="0.8"/>
+        <path d="M100 165 Q115 160 120 168" fill="none" stroke="#2D5A27" stroke-width="0.5"/>
+        <path d="M100 45 Q60 35 50 70 Q45 90 65 100 Q55 120 75 130 Q90 135 100 125" fill="url(#roseOuter)" opacity="0.9"/>
+        <path d="M100 45 Q140 35 150 70 Q155 90 135 100 Q145 120 125 130 Q110 135 100 125" fill="url(#roseOuter)" opacity="0.9"/>
+        <path d="M100 55 Q70 50 60 80 Q55 100 75 110 Q80 125 100 115" fill="url(#roseOuter)" opacity="0.85"/>
+        <path d="M100 55 Q130 50 140 80 Q145 100 125 110 Q120 125 100 115" fill="url(#roseOuter)" opacity="0.85"/>
+        <path d="M100 65 Q75 65 70 90 Q68 105 85 110 Q90 118 100 108" fill="url(#roseCenter)" opacity="0.9"/>
+        <path d="M100 65 Q125 65 130 90 Q132 105 115 110 Q110 118 100 108" fill="url(#roseCenter)" opacity="0.9"/>
+        <ellipse cx="100" cy="90" rx="15" ry="18" fill="#8B0000"/>
+        <ellipse cx="100" cy="90" rx="10" ry="12" fill="#6B0000"/>
+        <ellipse cx="100" cy="90" rx="5" ry="7" fill="#4A0000"/>
+        <circle cx="65" cy="70" r="2" fill="#FFD700" opacity="0.6"/>
+        <circle cx="135" cy="70" r="2" fill="#FFD700" opacity="0.6"/>
+        <circle cx="100" cy="45" r="1.5" fill="#FFD700" opacity="0.4"/>
+        <circle cx="55" cy="95" r="1.5" fill="#FFD700" opacity="0.3"/>
+        <circle cx="145" cy="95" r="1.5" fill="#FFD700" opacity="0.3"/>
+      </svg>
+    </div>
+    <div class="splash-quote-ru">"Есть в мире только одно счастье — <br>любить и быть любимым."</div>
+    <div class="splash-quote-fr">"Il n'y a qu'un seul bonheur dans ce monde — <br>aimer et être aimé."</div>
+    <div class="splash-quote-en">"There is only one happiness in the world — <br>to love and to be loved."</div>
+    <button id="splash-btn" class="splash-button">
+      <span class="splash-btn-text">Clique ici mon amour pour commencer</span>
+      <span class="splash-btn-sub">💕</span>
+    </button>
+  </div>
+</div>
 
 <div id="particles"></div>
 
@@ -28,7 +78,7 @@
         <circle cx="100" cy="10" r="2" fill="#C9A96E" opacity="0.4"/>
       </svg>
     </div>
-    <h1 class="title">Lamia</h1>
+    <h1 class="title">Russian with Lamia</h1>
     <p class="subtitle">L'élégance de la langue russe</p>
     <div class="header-ornament bottom">
       <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
@@ -330,7 +380,7 @@
     </svg>
   </div>
   <div class="footer-content">
-    <p class="footer-brand">Lamia</p>
+    <p class="footer-brand">Russian with Lamia</p>
     <p class="footer-russian">С любовью к русскому языку</p>
     <div class="footer-divider">
       <svg viewBox="0 0 100 8" xmlns="http://www.w3.org/2000/svg">
@@ -338,7 +388,7 @@
         <circle cx="50" cy="4" r="1.5" fill="#C9A96E" opacity="0.3"/>
       </svg>
     </div>
-    <p class="footer-copy">&copy; 2026 Lamia. Tous droits réservés.</p>
+    <p class="footer-copy">&copy; 2026 Russian with Lamia. Tous droits réservés.</p>
   </div>
 </footer>
 
