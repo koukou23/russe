@@ -30,7 +30,7 @@ html {
 
 body {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   background: linear-gradient(160deg, var(--navy) 0%, var(--navy-light) 40%, var(--burgundy) 100%);
   color: var(--text-primary);
   min-height: 100vh;
@@ -145,7 +145,7 @@ header::before {
 .title {
   font-family: 'Cormorant Garamond', serif;
   font-size: 5rem;
-  font-weight: 300;
+  font-weight: 400;
   background: linear-gradient(135deg, var(--rose-gold) 0%, var(--cream) 30%, var(--gold) 60%, var(--rose-gold) 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
@@ -299,7 +299,7 @@ main {
 }
 
 .card-content h2 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.8rem;
   font-weight: 500;
   color: var(--cream);
@@ -309,7 +309,7 @@ main {
 
 .card-content p {
   font-size: 0.9rem;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--text-secondary);
   margin-bottom: 1.5rem;
   line-height: 1.8;
@@ -321,7 +321,7 @@ main {
   background: linear-gradient(135deg, rgba(201, 169, 110, 0.15), rgba(232, 180, 184, 0.1));
   color: var(--cream);
   font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 0.85rem;
   border: 1px solid var(--border-subtle);
   border-radius: 50px;
@@ -377,7 +377,7 @@ main {
   justify-content: center;
   font-size: 0.9rem;
   font-weight: 400;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   border: 1px solid var(--border-subtle);
   color: var(--text-muted);
   transition: all 0.4s ease;
@@ -423,7 +423,7 @@ main {
 }
 
 .stat-num {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 2.2rem;
   font-weight: 500;
   color: var(--cream);
@@ -432,7 +432,7 @@ main {
 
 .stat-label {
   font-size: 0.7rem;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -476,7 +476,7 @@ footer::before {
 .footer-brand {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.5rem;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 6px;
   text-transform: uppercase;
   color: var(--text-muted);
@@ -486,8 +486,8 @@ footer::before {
 .footer-russian {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.1rem;
-  font-style: italic;
-  font-weight: 300;
+  font-style: normal;
+  font-weight: 400;
   color: rgba(201, 169, 110, 0.5);
   margin-bottom: 1rem;
 }
@@ -504,7 +504,7 @@ footer::before {
 
 .footer-copy {
   font-size: 0.75rem;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--text-muted);
   letter-spacing: 2px;
 }
@@ -554,7 +554,7 @@ footer::before {
 }
 
 .modal-content h2 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   color: var(--cream);
   font-size: 2rem;
   font-weight: 400;
@@ -564,7 +564,7 @@ footer::before {
 }
 
 .modal-content h3 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   color: var(--cream);
   font-size: 1.3rem;
   font-weight: 400;
@@ -674,7 +674,7 @@ footer::before {
   background: linear-gradient(135deg, rgba(201, 169, 110, 0.15), rgba(232, 180, 184, 0.1));
   color: var(--cream);
   font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 0.85rem;
   border: 1px solid var(--border-subtle);
   border-radius: 50px;
@@ -698,7 +698,7 @@ footer::before {
 }
 
 .result-level {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 2.5rem;
   font-weight: 400;
   margin: 1.2rem 0;
@@ -730,7 +730,7 @@ footer::before {
   border-radius: 50px;
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 0.8rem;
   transition: all 0.3s ease;
   letter-spacing: 2px;
@@ -743,8 +743,8 @@ footer::before {
 }
 
 .story-text {
-  font-style: italic;
-  font-family: 'Cormorant Garamond', serif;
+  font-style: normal;
+  font-family: 'Montserrat', sans-serif;
   color: var(--text-primary);
   font-size: 1rem;
   line-height: 1.9;
@@ -766,7 +766,7 @@ footer::before {
   color: var(--text-secondary);
   font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
-  font-weight: 300;
+  font-weight: 400;
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: left;
@@ -820,7 +820,7 @@ footer::before {
   color: var(--text-muted);
   font-size: 0.78rem;
   margin-bottom: 0.3rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .progress-bar {
@@ -929,7 +929,7 @@ footer::before {
 }
 
 .cyr {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.3rem;
   color: var(--cream);
   letter-spacing: 1px;
@@ -938,7 +938,7 @@ footer::before {
 .phon {
   font-size: 0.78rem;
   color: var(--gold);
-  font-style: italic;
+  font-style: normal;
 }
 
 .letter-card .example {
@@ -963,7 +963,7 @@ footer::before {
 }
 
 .vocab-item .ru {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem;
   color: var(--cream);
   min-width: 130px;
@@ -978,7 +978,7 @@ footer::before {
 .vocab-item .pron {
   font-size: 0.78rem;
   color: var(--text-muted);
-  font-style: italic;
+  font-style: normal;
   min-width: 100px;
   text-align: right;
 }
@@ -1008,7 +1008,7 @@ footer::before {
 }
 
 .num-item .ru {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   color: var(--cream);
 }
@@ -1042,11 +1042,11 @@ footer::before {
 }
 
 .poem-ru {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   color: var(--cream);
   line-height: 2;
-  font-style: italic;
+  font-style: normal;
   margin-bottom: 0.8rem;
 }
 
@@ -1054,7 +1054,7 @@ footer::before {
   font-size: 0.85rem;
   color: var(--text-muted);
   line-height: 1.8;
-  font-style: italic;
+  font-style: normal;
 }
 
 .idiom-list {
@@ -1071,7 +1071,7 @@ footer::before {
 }
 
 .idiom-item .ru {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   color: var(--cream);
   display: block;
@@ -1086,7 +1086,7 @@ footer::before {
 .idiom-item .litr {
   font-size: 0.75rem;
   color: var(--text-muted);
-  font-style: italic;
+  font-style: normal;
   display: block;
 }
 
@@ -1108,7 +1108,7 @@ footer::before {
   padding: 0.6rem 0.8rem;
   text-align: left;
   border: 1px solid var(--border-subtle);
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .case-table td {
@@ -1213,7 +1213,7 @@ footer::before {
 .exercise-feedback {
   font-size: 0.85rem;
   margin-top: 0.5rem;
-  font-style: italic;
+  font-style: normal;
 }
 
 .lesson-content ul {
@@ -1343,7 +1343,7 @@ footer::before {
 .splash-quote-ru {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.8rem;
-  font-style: italic;
+  font-style: normal;
   color: #E8B4B8;
   line-height: 1.5;
   margin-bottom: 0.8rem;
@@ -1355,7 +1355,7 @@ footer::before {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1rem;
   color: rgba(201, 169, 110, 0.6);
-  font-style: italic;
+  font-style: normal;
   margin-bottom: 0.3rem;
 }
 
@@ -1363,7 +1363,7 @@ footer::before {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.85rem;
   color: rgba(255, 245, 240, 0.4);
-  font-weight: 300;
+  font-weight: 400;
   margin-bottom: 2.5rem;
   letter-spacing: 0.5px;
 }
@@ -1387,7 +1387,7 @@ footer::before {
   padding: 1rem 2.5rem;
   background: linear-gradient(135deg, #8B0000 0%, #CC0000 50%, #8B0000 100%);
   color: #FFD700;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
   font-weight: 500;
   border: 2px solid rgba(255, 215, 0, 0.3);
@@ -1435,7 +1435,7 @@ footer::before {
   font-size: 0.9rem;
   color: rgba(232, 180, 184, 0.5);
   font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 2px;
 }
 
@@ -1520,7 +1520,7 @@ footer::before {
 .mem-card-question {
   font-size: 1.8rem;
   color: var(--gold);
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .mem-card-back {
@@ -1540,7 +1540,7 @@ footer::before {
 .mem-card-text {
   font-size: 1rem;
   color: var(--cream);
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   word-break: break-word;
 }
@@ -1624,7 +1624,7 @@ footer::before {
   justify-content: space-between;
   align-items: center;
   color: var(--cream);
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem;
 }
 
@@ -1683,7 +1683,7 @@ footer::before {
 }
 
 .oral-text-ru {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   color: var(--cream);
   flex: 1;
@@ -1692,7 +1692,7 @@ footer::before {
 .oral-text-fr {
   font-size: 0.78rem;
   color: var(--text-muted);
-  font-style: italic;
+  font-style: normal;
   margin-top: 0.15rem;
 }
 
@@ -1734,7 +1734,7 @@ footer::before {
 }
 
 .sound-cyr {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 2.8rem;
   color: var(--gold);
   display: block;
@@ -1744,7 +1744,7 @@ footer::before {
 .sound-translit {
   font-size: 0.8rem;
   color: var(--text-muted);
-  font-style: italic;
+  font-style: normal;
   margin-bottom: 0.3rem;
 }
 
@@ -1761,7 +1761,7 @@ footer::before {
   cursor: pointer;
   transition: all 0.3s ease;
   color: var(--cream);
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   display: flex;
   justify-content: space-between;
@@ -1862,11 +1862,11 @@ footer::before {
 }
 
 .tongue-ru {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.15rem;
   color: var(--cream);
   margin-bottom: 0.3rem;
-  font-style: italic;
+  font-style: normal;
 }
 
 .tongue-fr {
@@ -1882,7 +1882,7 @@ footer::before {
   border: 1px solid rgba(201, 169, 110, 0.2);
   border-radius: 10px;
   color: var(--cream);
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   outline: none;
   transition: border-color 0.3s ease;

@@ -107,7 +107,7 @@ const LESSONS = {
           <div class="letter-card"><span class="cyr">К к</span><span class="phon">[k]</span><span class="example">comme <strong>kilo</strong></span></div>
           <div class="letter-card"><span class="cyr">Л л</span><span class="phon">[l]</span><span class="example">comme <strong>lune</strong></span></div>
         </div>
-        <p style="margin-top:1.2rem;font-style:italic;color:var(--text-muted)">Pi\u00e8ge : le <strong>В</strong> se prononce V, pas B !</p>`,
+        <p style="margin-top:1.2rem;font-style:normal;color:var(--text-muted)">Pi\u00e8ge : le <strong>В</strong> se prononce V, pas B !</p>`,
       examples: ["A = a comme dans papa", "V = v comme dans vélo", "J = j comme dans jardin", "I = i comme dans île"],
       exercise: {
         type: "choice",
@@ -148,7 +148,7 @@ const LESSONS = {
           <div class="letter-card"><span class="cyr">Ю ю</span><span class="phon">[you]</span><span class="example"><strong>youpi</strong></span></div>
           <div class="letter-card"><span class="cyr">Я я</span><span class="phon">[ya]</span><span class="example"><strong>yaourt</strong></span></div>
         </div>
-        <p style="margin-top:1.2rem;font-style:italic;color:var(--text-muted)">Bravo ! Lisez : <strong>мама</strong> [ma-ma] (maman), <strong>папа</strong> [pa-pa] (papa).</p>`,
+        <p style="margin-top:1.2rem;font-style:normal;color:var(--text-muted)">Bravo ! Lisez : <strong>мама</strong> [ma-ma] (maman), <strong>папа</strong> [pa-pa] (papa).</p>`,
       examples: ["R = r roulé", "Y = son unique [y]", "b = signe mou", "R = ya comme yaourt"],
       exercise: {
         type: "fill",
@@ -208,7 +208,7 @@ const LESSONS = {
           <p><strong>Он</strong> работает. — Il travaille.</p>
           <p><strong>Мы</strong> учим русский. — Nous apprenons le russe.</p>
         </div>
-        <p style="margin-top:1rem;font-style:italic;color:var(--text-muted)"><strong>Вы</strong> est aussi la forme de politesse.</p>`,
+        <p style="margin-top:1rem;font-style:normal;color:var(--text-muted)"><strong>Вы</strong> est aussi la forme de politesse.</p>`,
       examples: ["я — je", "ты — tu", "он/она — il/elle", "мы — nous"],
       exercise: {
         type: "choice",
@@ -246,7 +246,7 @@ const LESSONS = {
           <div class="num-item"><span class="num">19</span><span class="ru">девятнадцать</span><span class="pron">[dye-vyat-nad-tsat\']</span></div>
           <div class="num-item"><span class="num">20</span><span class="ru">двадцать</span><span class="pron">[dva-tsat\']</span></div>
         </div>
-        <p style="margin-top:1rem;font-style:italic;color:var(--text-muted)">Les nombres de 11 à 19 prennent le suffixe <strong>-надцать</strong>.</p>`,
+        <p style="margin-top:1rem;font-style:normal;color:var(--text-muted)">Les nombres de 11 à 19 prennent le suffixe <strong>-надцать</strong>.</p>`,
       examples: ["один — 1", "два — 2", "пять — 5", "десять — 10"],
       exercise: {
         type: "fill",
@@ -267,7 +267,7 @@ const LESSONS = {
           <p><strong>F\u00e9minin</strong> : se termine par <strong>-а</strong> ou <strong>-я</strong><br>книга [kni-ga] (livre), земля [zyim-lya] (terre)</p>
           <p><strong>Neutre</strong> : se termine par <strong>-о</strong> ou <strong>-е</strong><br>окно [ak-no] (fen\u00eatre), море [mo-rye] (mer)</p>
         </div>
-        <p style="margin-top:1rem;font-style:italic;color:var(--text-muted)">Exceptions : les noms en <strong>-ь</strong> peuvent \u00eatre masculins ou f\u00e9minins.</p>`,
+        <p style="margin-top:1rem;font-style:normal;color:var(--text-muted)">Exceptions : les noms en <strong>-ь</strong> peuvent \u00eatre masculins ou f\u00e9minins.</p>`,
       examples: ["стол (m.) — table", "книга (f.) — livre", "окно (n.) — fenêtre"],
       exercise: {
         type: "choice",
@@ -326,7 +326,7 @@ J'apprends le russe.</p>
           <div class="vocab-item"><span class="ru">Кремль</span><span class="fr">Kremlin</span><span class="pron">[kryeml\']</span></div>
           <div class="vocab-item"><span class="ru">Красная площадь</span><span class="fr">Place Rouge</span><span class="pron">[kras-na-ya plo-chchad\']</span></div>
         </div>
-        <p style="margin-top:1rem;font-style:italic;color:var(--text-muted)">La premi\u00e8re Matriochka a \u00e9t\u00e9 fabriqu\u00e9e en 1890 par Vassili Zviozdotchkine.</p>`,
+        <p style="margin-top:1rem;font-style:normal;color:var(--text-muted)">La premi\u00e8re Matriochka a \u00e9t\u00e9 fabriqu\u00e9e en 1890 par Vassili Zviozdotchkine.</p>`,
       examples: ["Матрёшка — poupée gigogne", "Балалайка — instrument à 3 cordes"],
       exercise: {
         type: "choice",
@@ -521,7 +521,7 @@ Vous : 850 roubles. Voilà. Gardez la monnaie.</p>
           <div class="vocab-item"><span class="ru">День Победы</span><span class="fr">9 mai (Victoire)</span><span class="pron">[dyen\' pa-bye-dy]</span></div>
           <div class="vocab-item"><span class="ru">Дед Мороз</span><span class="fr">Père Noël russe</span><span class="pron">[dyed ma-ros]</span></div>
         </div>
-        <p style="margin-top:1rem;font-style:italic;color:var(--text-muted)">La Maslenitsa dure une semaine : on mange des <strong>блины</strong> [bli-ny] (crêpes) et on brûle un épouvantail.</p>`,
+        <p style="margin-top:1rem;font-style:normal;color:var(--text-muted)">La Maslenitsa dure une semaine : on mange des <strong>блины</strong> [bli-ny] (crêpes) et on brûle un épouvantail.</p>`,
       examples: ["Новый год — Nouvel An", "Масленица — fête des crêpes"],
       exercise: {
         type: "choice",
@@ -1094,7 +1094,7 @@ Je ne veux vous attrister de rien.</p>
           <div class="vocab-item"><span class="ru">культура</span><span class="fr">culture</span><span class="pron">[koul\'-tou-ra]</span></div>
           <div class="vocab-item"><span class="ru">Яндекс</span><span class="fr">Yandex (moteur de recherche russe)</span><span class="pron">[yan-dyeks]</span></div>
         </div>
-        <p style="margin-top:1rem;font-style:italic;color:var(--text-muted)">La scène artistique russe contemporaine est dynamique : les écoles d’art de Moscou et Saint-Pétersbourg forment des artistes reconnus mondialement.</p>`,
+        <p style="margin-top:1rem;font-style:normal;color:var(--text-muted)">La scène artistique russe contemporaine est dynamique : les écoles d’art de Moscou et Saint-Pétersbourg forment des artistes reconnus mondialement.</p>`,
       examples: ["Современное искусство — art contemporain"],
       exercise: {
         type: "choice",
@@ -2389,7 +2389,7 @@ function renderScramble() {
       <span>Th\u00e8me : ${scrambleState.word ? scrambleState.word.theme : '-'}</span>
     </div>
     <div style="text-align:center;margin:2rem 0">
-      <div style="font-size:2.5rem;letter-spacing:8px;color:var(--gold);font-family:'Cormorant Garamond',serif;margin-bottom:1.5rem">
+      <div style="font-size:2.5rem;letter-spacing:8px;color:var(--gold);font-family:'Montserrat',sans-serif;margin-bottom:1.5rem">
         ${scrambleState.scrambled.split('').map(l => `<span style="display:inline-block;background:rgba(201,169,110,0.1);padding:0.3rem 0.5rem;border-radius:8px;margin:0 2px;border:1px solid rgba(201,169,110,0.2)">${l}</span>`).join('')}
       </div>
       <input type="text" id="scramble-input" placeholder="Tapez le mot ici..." 
@@ -2548,7 +2548,7 @@ function showGamesMenu() {
         <div style="display:flex;align-items:center;gap:1rem">
           <span style="font-size:2.5rem">\ud83e\udde0</span>
           <div>
-            <div style="color:var(--cream);font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-bottom:0.2rem">Jeu de Memory</div>
+            <div style="color:var(--cream);font-family:'Montserrat',sans-serif;font-size:1.2rem;margin-bottom:0.2rem">Jeu de Memory</div>
             <div style="font-size:0.8rem;color:var(--text-muted)">Associez les mots russes \u00e0 leur traduction</div>
           </div>
         </div>
@@ -2557,7 +2557,7 @@ function showGamesMenu() {
         <div style="display:flex;align-items:center;gap:1rem">
           <span style="font-size:2.5rem">\ud83d\udd24</span>
           <div>
-            <div style="color:var(--cream);font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-bottom:0.2rem">Puzzle de mots</div>
+            <div style="color:var(--cream);font-family:'Montserrat',sans-serif;font-size:1.2rem;margin-bottom:0.2rem">Puzzle de mots</div>
             <div style="font-size:0.8rem;color:var(--text-muted)">Reconstituez le mot russe m\u00e9lang\u00e9</div>
           </div>
         </div>
@@ -2566,7 +2566,7 @@ function showGamesMenu() {
         <div style="display:flex;align-items:center;gap:1rem">
           <span style="font-size:2.5rem">\u26a1</span>
           <div>
-            <div style="color:var(--cream);font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-bottom:0.2rem">Quiz \u00c9clair</div>
+            <div style="color:var(--cream);font-family:'Montserrat',sans-serif;font-size:1.2rem;margin-bottom:0.2rem">Quiz \u00c9clair</div>
             <div style="font-size:0.8rem;color:var(--text-muted)">8 questions chronom\u00e9tr\u00e9es</div>
           </div>
         </div>
@@ -2838,26 +2838,26 @@ function getProgressPrediction() {
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0">
       <div style="background:rgba(201,169,110,0.08);border-radius:12px;padding:1rem;text-align:center">
         <div style="font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px">Leçons</div>
-        <div style="font-size:1.8rem;color:var(--gold);font-family:'Cormorant Garamond',serif">${completedLessons}</div>
+        <div style="font-size:1.8rem;color:var(--gold);font-family:'Montserrat',sans-serif">${completedLessons}</div>
         <div style="font-size:0.75rem;color:var(--text-muted)">/ ${totalLessons}</div>
       </div>
       <div style="background:rgba(201,169,110,0.08);border-radius:12px;padding:1rem;text-align:center">
         <div style="font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px">Précision</div>
-        <div style="font-size:1.8rem;color:var(--gold);font-family:'Cormorant Garamond',serif">${accuracy}%</div>
+        <div style="font-size:1.8rem;color:var(--gold);font-family:'Montserrat',sans-serif">${accuracy}%</div>
         <div style="font-size:0.75rem;color:var(--text-muted)">${stats.totalExercises} exercices</div>
       </div>
       <div style="background:rgba(201,169,110,0.08);border-radius:12px;padding:1rem;text-align:center">
         <div style="font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px">Jours</div>
-        <div style="font-size:1.8rem;color:var(--gold);font-family:'Cormorant Garamond',serif">${daysSinceStart}</div>
+        <div style="font-size:1.8rem;color:var(--gold);font-family:'Montserrat',sans-serif">${daysSinceStart}</div>
         <div style="font-size:0.75rem;color:var(--text-muted)">depuis le début</div>
       </div>
       <div style="background:rgba(201,169,110,0.08);border-radius:12px;padding:1rem;text-align:center">
         <div style="font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px">Reste</div>
-        <div style="font-size:1.8rem;color:var(--gold);font-family:'Cormorant Garamond',serif">${daysRemaining}</div>
+        <div style="font-size:1.8rem;color:var(--gold);font-family:'Montserrat',sans-serif">${daysRemaining}</div>
         <div style="font-size:0.75rem;color:var(--text-muted)">jours estimés</div>
       </div>
     </div>
-    <p style="text-align:center;color:var(--text-secondary);font-size:0.9rem;font-style:italic">${message}</p>
+    <p style="text-align:center;color:var(--text-secondary);font-size:0.9rem;font-style:normal">${message}</p>
   `;
 }
 
@@ -2879,7 +2879,7 @@ function getReviewCards() {
         <div class="review-card" style="background:rgba(255,255,255,0.02);border:1px solid rgba(201,169,110,0.12);border-radius:12px;padding:0.8rem 1rem;cursor:pointer;transition:all 0.3s"
              onclick="showReviewAnswer(${i})" id="review-${i}">
           <div style="display:flex;justify-content:space-between;align-items:center">
-            <span style="color:var(--cream);font-size:1rem;font-family:'Cormorant Garamond',serif">${word.ru}</span>
+            <span style="color:var(--cream);font-size:1rem;font-family:'Montserrat',sans-serif">${word.ru}</span>
             <span style="font-size:0.75rem;color:var(--text-muted)">${word.theme}</span>
           </div>
           <div id="review-answer-${i}" style="display:none;margin-top:0.5rem;padding-top:0.5rem;border-top:1px solid rgba(201,169,110,0.1)">
@@ -2913,14 +2913,14 @@ function showAIAssistant() {
       
       <div class="ai-tab" onclick="toggleAITab('conj')" style="background:rgba(201,169,110,0.06);border-radius:16px;padding:1rem;cursor:pointer;border:1px solid rgba(201,169,110,0.12)">
         <div style="display:flex;justify-content:space-between;align-items:center">
-          <span style="font-size:1.1rem;color:var(--cream);font-family:'Cormorant Garamond',serif">📖 Conjugueur de verbes</span>
+          <span style="font-size:1.1rem;color:var(--cream);font-family:'Montserrat',sans-serif">📖 Conjugueur de verbes</span>
           <span style="color:var(--gold);font-size:1.2rem">▼</span>
         </div>
         <div id="ai-tab-conj" style="display:none;margin-top:1rem">
           <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0.8rem">Entrez un verbe en russe (infinitif) pour voir sa conjugaison complète :</p>
           <div style="display:flex;gap:0.5rem">
             <input type="text" id="ai-verb-input" placeholder="Ex: читать, говорить, быть..." 
-              style="flex:1;padding:0.7rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(201,169,110,0.2);border-radius:10px;color:var(--cream);font-family:'Cormorant Garamond',serif;font-size:1rem;outline:none"
+              style="flex:1;padding:0.7rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(201,169,110,0.2);border-radius:10px;color:var(--cream);font-family:'Montserrat',sans-serif;font-size:1rem;outline:none"
               onkeypress="if(event.key==='Enter') conjugateVerb()">
             <button class="btn" onclick="conjugateVerb()" style="padding:0.5rem 1.2rem;font-size:0.85rem">Conjuguer</button>
           </div>
@@ -2930,14 +2930,14 @@ function showAIAssistant() {
       
       <div class="ai-tab" onclick="toggleAITab('pron')" style="background:rgba(201,169,110,0.06);border-radius:16px;padding:1rem;cursor:pointer;border:1px solid rgba(201,169,110,0.12)">
         <div style="display:flex;justify-content:space-between;align-items:center">
-          <span style="font-size:1.1rem;color:var(--cream);font-family:'Cormorant Garamond',serif">🔊 Prononciation</span>
+          <span style="font-size:1.1rem;color:var(--cream);font-family:'Montserrat',sans-serif">🔊 Prononciation</span>
           <span style="color:var(--gold);font-size:1.2rem">▼</span>
         </div>
         <div id="ai-tab-pron" style="display:none;margin-top:1rem">
           <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0.8rem">Tapez un mot ou une phrase en russe et écoutez la prononciation :</p>
           <div style="display:flex;gap:0.5rem">
             <input type="text" id="ai-pron-input" placeholder="Ex: Здравствуйте, как дела?" 
-              style="flex:1;padding:0.7rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(201,169,110,0.2);border-radius:10px;color:var(--cream);font-family:'Cormorant Garamond',serif;font-size:1rem;outline:none"
+              style="flex:1;padding:0.7rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(201,169,110,0.2);border-radius:10px;color:var(--cream);font-family:'Montserrat',sans-serif;font-size:1rem;outline:none"
               onkeypress="if(event.key==='Enter') speakRussian(document.getElementById('ai-pron-input').value)">
             <button class="btn" onclick="speakRussian(document.getElementById('ai-pron-input').value)" style="padding:0.5rem 1.2rem;font-size:0.85rem">🔊</button>
           </div>
@@ -2947,7 +2947,7 @@ function showAIAssistant() {
       
       <div class="ai-tab" onclick="toggleAITab('errors')" style="background:rgba(201,169,110,0.06);border-radius:16px;padding:1rem;cursor:pointer;border:1px solid rgba(201,169,110,0.12)">
         <div style="display:flex;justify-content:space-between;align-items:center">
-          <span style="font-size:1.1rem;color:var(--cream);font-family:'Cormorant Garamond',serif">📊 Analyse de vos erreurs</span>
+          <span style="font-size:1.1rem;color:var(--cream);font-family:'Montserrat',sans-serif">📊 Analyse de vos erreurs</span>
           <span style="color:var(--gold);font-size:1.2rem">▼</span>
         </div>
         <div id="ai-tab-errors" style="display:none;margin-top:1rem">${getErrorAnalysis()}</div>
@@ -2955,7 +2955,7 @@ function showAIAssistant() {
       
       <div class="ai-tab" onclick="toggleAITab('pred')" style="background:rgba(201,169,110,0.06);border-radius:16px;padding:1rem;cursor:pointer;border:1px solid rgba(201,169,110,0.12)">
         <div style="display:flex;justify-content:space-between;align-items:center">
-          <span style="font-size:1.1rem;color:var(--cream);font-family:'Cormorant Garamond',serif">📈 Prédiction de progression</span>
+          <span style="font-size:1.1rem;color:var(--cream);font-family:'Montserrat',sans-serif">📈 Prédiction de progression</span>
           <span style="color:var(--gold);font-size:1.2rem">▼</span>
         </div>
         <div id="ai-tab-pred" style="display:none;margin-top:1rem">${getProgressPrediction()}</div>
@@ -2963,7 +2963,7 @@ function showAIAssistant() {
       
       <div class="ai-tab" onclick="toggleAITab('review')" style="background:rgba(201,169,110,0.06);border-radius:16px;padding:1rem;cursor:pointer;border:1px solid rgba(201,169,110,0.12)">
         <div style="display:flex;justify-content:space-between;align-items:center">
-          <span style="font-size:1.1rem;color:var(--cream);font-family:'Cormorant Garamond',serif">🔄 Révisions intelligentes</span>
+          <span style="font-size:1.1rem;color:var(--cream);font-family:'Montserrat',sans-serif">🔄 Révisions intelligentes</span>
           <span style="color:var(--gold);font-size:1.2rem">▼</span>
         </div>
         <div id="ai-tab-review" style="display:none;margin-top:1rem">${getReviewCards()}</div>
@@ -3341,7 +3341,7 @@ function generateDialogueContent() {
   let html = '<p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0.8rem">Choisissez un dialogue pour pratifier :</p>';
   dialogueData.forEach(d => {
     html += '<div class="oral-dialogue" onclick="showDialogue(\'' + d.id + '\')" style="cursor:pointer">';
-    html += '<div style="font-size:1rem;color:var(--cream);font-family:\'Cormorant Garamond\',serif">' + d.titre + '</div>';
+    html += '<div style="font-size:1rem;color:var(--cream);font-family:\'Montserrat\',sans-serif">' + d.titre + '</div>';
     html += '<div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.3rem">' + d.lignes.length + ' répliques</div>';
     html += '</div>';
   });
@@ -3390,8 +3390,8 @@ function startDialoguePractice(id) {
     const icon = l.speaker === 'A' ? '👩' : '👨';
     container.innerHTML = '<div class="oral-practice-mode">' +
       '<p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.5rem">Répétez cette phrase :</p>' +
-      '<p style="font-size:1.2rem;color:var(--cream);font-family:\'Cormorant Garamond\',serif;margin-bottom:0.5rem">' + icon + ' ' + l.ru + '</p>' +
-      '<p style="font-size:0.8rem;color:var(--text-muted);font-style:italic;margin-bottom:0.8rem">' + l.fr + '</p>' +
+      '<p style="font-size:1.2rem;color:var(--cream);font-family:\'Montserrat\',sans-serif;margin-bottom:0.5rem">' + icon + ' ' + l.ru + '</p>' +
+      '<p style="font-size:0.8rem;color:var(--text-muted);font-style:normal;margin-bottom:0.8rem">' + l.fr + '</p>' +
       '<div style="display:flex;gap:0.5rem;justify-content:center">' +
       '<button class="oral-voice-btn" onclick="speakRussian(\'' + l.ru.replace(/'/g, "\\'") + '\')" style="width:auto;padding:0.4rem 1rem;border-radius:50px">🔊 Écouter</button>' +
       '<button class="record-btn" onclick="practiceLine(\'' + l.ru.replace(/'/g, "\\'") + '\', function(){currentLine++;showNextLine()})" style="padding:0.4rem 1rem;font-size:0.8rem">🎤 Enregistrer</button>' +
@@ -3449,7 +3449,7 @@ function showSoundDetail(letter) {
   let html = '<button class="restart-quiz" onclick="generateSoundsContent();toggleOralTab(\'sounds\')" style="margin-bottom:1rem;font-size:0.75rem">← Retour aux sons</button>';
   html += '<div style="text-align:center;margin-bottom:1rem">';
   html += '<span class="sound-cyr" style="font-size:3.5rem">' + s.letter + '</span>';
-  html += '<p style="color:var(--text-muted);font-style:italic">' + s.translit + '</p>';
+  html += '<p style="color:var(--text-muted);font-style:normal">' + s.translit + '</p>';
   html += '<p style="font-size:0.9rem;color:var(--text-secondary);margin-top:0.5rem">' + s.description + '</p>';
   html += '<p style="font-size:0.82rem;color:var(--gold);margin-top:0.3rem">💡 ' + s.conseil + '</p>';
   html += '</div>';
@@ -3479,8 +3479,8 @@ function practiceSound(letter) {
   const randomWord = s.mots[Math.floor(Math.random() * s.mots.length)];
   container.innerHTML = '<div class="oral-practice-mode">' +
     '<p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.5rem">Répétez ce mot :</p>' +
-    '<p style="font-size:1.5rem;color:var(--cream);font-family:\'Cormorant Garamond\',serif;margin-bottom:0.3rem">' + randomWord.ru + '</p>' +
-    '<p style="font-size:0.8rem;color:var(--text-muted);font-style:italic;margin-bottom:0.8rem">' + randomWord.pron + ' — ' + randomWord.fr + '</p>' +
+    '<p style="font-size:1.5rem;color:var(--cream);font-family:\'Montserrat\',sans-serif;margin-bottom:0.3rem">' + randomWord.ru + '</p>' +
+    '<p style="font-size:0.8rem;color:var(--text-muted);font-style:normal;margin-bottom:0.8rem">' + randomWord.pron + ' — ' + randomWord.fr + '</p>' +
     '<div style="display:flex;gap:0.5rem;justify-content:center">' +
     '<button class="oral-voice-btn" onclick="speakRussian(\'' + randomWord.ru.replace(/'/g, "\\'") + '\')" style="width:auto;padding:0.4rem 1rem;border-radius:50px">🔊 Écouter</button>' +
     '<button class="record-btn" onclick="practiceWord(\'' + randomWord.ru.replace(/'/g, "\\'") + '\',\'' + id + '\')" style="padding:0.4rem 1rem;font-size:0.8rem">🎤 Enregistrer</button>' +
@@ -3546,8 +3546,8 @@ function generateListenRepeatContent() {
   container.innerHTML = '<div style="text-align:center;padding:1rem 0">' +
     '<p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem">Écoutez la phrase, puis enregistrez-vous pour comparer votre prononciation</p>' +
     '<div id="oral-lr-phrase" style="margin-bottom:1rem">' +
-    '<p style="font-size:1.5rem;color:var(--cream);font-family:\'Cormorant Garamond\',serif;margin-bottom:0.3rem">' + randomPhrase.ru + '</p>' +
-    '<p style="font-size:0.82rem;color:var(--text-muted);font-style:italic">' + randomPhrase.pron + '</p>' +
+    '<p style="font-size:1.5rem;color:var(--cream);font-family:\'Montserrat\',sans-serif;margin-bottom:0.3rem">' + randomPhrase.ru + '</p>' +
+    '<p style="font-size:0.82rem;color:var(--text-muted);font-style:normal">' + randomPhrase.pron + '</p>' +
     '<p style="font-size:0.85rem;color:var(--text-secondary)">' + randomPhrase.fr + '</p>' +
     '</div>' +
     '<div style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap">' +
